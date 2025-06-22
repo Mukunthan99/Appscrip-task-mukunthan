@@ -1,0 +1,157 @@
+.header {
+  height: 13rem;
+  width: 100%;
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+
+.topStrip {
+  font-family: "Inter", sans-serif;
+  background-color: black;
+  color: #eb4c6b;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem 0;
+}
+
+.topStripItem1,
+.topStripItem2,
+.topStripItem3 {
+  display: flex;
+  align-items: center;
+}
+
+.mainHeader {
+  position: relative;
+  padding: 1.5rem 2rem;
+  background-color: white;
+  text-align: center;
+}
+
+.mobileHamburgerMenu {
+  display: none;
+}
+
+.logoLeft,
+.iconsRight {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.logoLeft {
+  left: 2rem;
+}
+
+.iconsRight {
+  right: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logoCenter {
+  font-size: 36px;
+  display: inline-block;
+  font-family: Inter;
+  font-weight: 800;
+  line-height: 100%;
+  letter-spacing: 1px;
+  vertical-align: middle;
+}
+
+.langSelect {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 1px;
+  vertical-align: middle;
+}
+
+.navMenu {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  background-color: white;
+  font-weight: 600;
+}
+
+.navMenu a {
+  font-family: "Inter";
+  text-decoration: none;
+  color: #252020;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 1px;
+  vertical-align: middle;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .topStripItem1 {
+    font-size: 12px;
+  }
+  .topStripItem1 img {
+    width: 14px;
+    height: 14px;
+  }
+  .topStripItem2,
+  .topStripItem3 {
+    display: none;
+  }
+  .mobileHamburgerMenu {
+    display: block;
+  }
+  .logoLeft {
+    display: flex;
+    gap: 10px;
+  }
+  .header {
+    height: auto;
+    gap: 0;
+    padding-bottom: 0;
+  }
+  .mainHeader {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .iconsRight img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .logoLeft img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .logoCenter {
+    font-size: 20px;
+    display: inline-block;
+    font-family: Inter;
+    font-weight: 800;
+    line-height: 100%;
+    letter-spacing: 1px;
+    vertical-align: middle;
+  }
+
+  .navMenu {
+    display: none;
+  }
+  .user {
+    display: none;
+  }
+  .langSelect {
+    display: none;
+  }
+}
