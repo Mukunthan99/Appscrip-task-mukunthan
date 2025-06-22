@@ -41,21 +41,6 @@ components/
 └── Shop/ # Container for Shop page
 ```
 
-## How to Run Locally
-
-```bash
-# Clone the repository
-git clone https://github.com/Mukunthan99/Appscrip-task-mukunthan.git
-cd Appscrip-task-mukunthan
-
-# Install dependencies
-npm install
-
-# Run in dev mode
-npm run dev
-
-# Open http://localhost:3000 in your browser
-```
 
 ##  SSR (Server-Side Rendering)
 Server-side rendering has been implemented in the pages/index.js file using getServerSideProps:
