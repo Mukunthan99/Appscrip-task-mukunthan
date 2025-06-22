@@ -1,40 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Appscrip-task-Mukunthan
 
-## Getting Started
+This is a product listing page built using **Next.js** (React Framework) as part of an assessment task. The page is fully responsive, utilises server-side rendering (SSR), and fetches mock data from the [FakeStoreAPI](https://fakestoreapi.com/). It features filtering, sorting, and basic SEO optimisation.
 
-First, run the development server:
+## Live Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+https://appscrip-task-mukunthan.vercel.app/
+
+## Features
+
+- **Responsive Design**: Optimised for mobile and desktop.
+- **Filtering**: Filter by category ("Ideal For" logic).
+- **Sorting**: Sort by Recommended, Price High to Low, Low to High, etc.
+- **Mobile Sidebar Drawer** for filters.
+- **SSR (Server-Side Rendering)** for product data using `getServerSideProps`.
+- **SEO Optimized**:
+  - Title, meta description
+  - Semantic tags (`<h1>`, `<h2>`.`<aside>`,etc)
+  - SEO-friendly image names and alt attributes
+- **Minimal DOM size** and no unnecessary libraries used.
+
+## Tech Stack
+
+- **Next.js** (React)
+- **CSS Modules** for styling
+- **FakeStoreAPI** for mock data
+- **Vercel** for deployment
+- **GitHub** for source code management
+
+## Folder Structure
+
+```
+components/
+│
+├── Header/ # Top header with nav and icons
+├── Footer/ # Footer with collapsibles & social
+├── FilterSidebar/ # Sidebar filters (Ideal For, etc.)
+├── SortDropdown/ # Sort dropdown UI
+├── ProductCard/ # Individual product card
+├── ProductsPage/ # Filterable, sortable product grid
+└── Shop/ # Container for Shop page
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## How to Run Locally
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```bash
+# Clone the repository
+git clone https://github.com/Mukunthan99/Appscrip-task-mukunthan.git
+cd Appscrip-task-mukunthan
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+# Install dependencies
+npm install
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+# Run in dev mode
+npm run dev
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Open http://localhost:3000 in your browser
+```
 
-## Learn More
+##  SSR (Server-Side Rendering)
+Server-side rendering has been implemented in the pages/index.js file using getServerSideProps:
+#### Code Sample:
+```
+export async function getServerSideProps() {
+  const res = await fetch('https://fakestoreapi.com/products');
+  const productsData = await res.json();
 
-To learn more about Next.js, take a look at the following resources:
+  return {
+    props: { productsData },
+  };
+}
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+## Links
+- **GitHub Repo:** https://github.com/Mukunthan99/Appscrip-task-mukunthan
+- **API:** https://fakestoreapi.com/
+- **Live Site:** https://appscrip-task-mukunthan.vercel.app/
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+
